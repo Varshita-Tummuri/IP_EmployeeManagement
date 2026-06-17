@@ -1,4 +1,7 @@
 package com.varshita.resource_allocation_portal.repositories;
 
-public class AvailabilityRepository {
+import com.varshita.resource_allocation_portal.models.Availability;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AvailabilityRepository extends JpaRepository<Availability, Long> {
 }

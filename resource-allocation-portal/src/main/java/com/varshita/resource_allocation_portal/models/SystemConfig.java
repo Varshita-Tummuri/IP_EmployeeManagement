@@ -5,25 +5,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.cglib.core.Local;
 
-import java.time.LocalDate;
-
+@Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
-public class Master_Project {
+public class SystemConfig {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long projId;
-    private String projName;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private int requiredPpl;
-    private boolean status;
+    private  Long configId;
+
+    private Integer hoursThreshold;
+    private Integer allocationThreshold;
 }

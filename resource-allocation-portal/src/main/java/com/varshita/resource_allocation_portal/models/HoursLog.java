@@ -1,33 +1,29 @@
 package com.varshita.resource_allocation_portal.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Time;
 import java.time.LocalDate;
 
-@Entity
 @Data
-@Builder
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Allocation {
+public class HoursLog {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long allocationId;
+    private Long logId;
 
-    @ManyToOne
     @JoinColumn(name = "emp_id", nullable = false)
     private Master_Employee employee;
 
-    @ManyToOne
     @JoinColumn(name = "proj_id", nullable = false)
     private Master_Project project;
 
-    private int allocationPercent;
     private LocalDate startDate;
-    private LocalDate endDate;
-    private String status;
+    private Integer hoursLogged;
 }
